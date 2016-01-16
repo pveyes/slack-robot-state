@@ -1,0 +1,34 @@
+{
+  "name": "slack-robot-state",
+  "version": "0.1.0",
+  "description": "Enable state management for slack-robot",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/pveyes/slack-robot-state.git"
+  },
+  "keywords": [
+    "slack",
+    "robot",
+    "slack-robot",
+    "brain",
+    "state"
+  ],
+  "author": "Fatih Kalifa <fatihkalifa@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/pveyes/slack-robot-state/issues"
+  },
+  "homepage": "https://github.com/pveyes/slack-robot-state#readme",
+  "dependencies": {
+    "async": "^1.5.2",
+    "deep-assign": "^2.0.0",
+    "mkdirp": "^0.5.1"
+  },
+  "peerDependencies": {
+    "slack-robot": "^3.0.0"
+  }
+}
