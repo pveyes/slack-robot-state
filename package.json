@@ -1,6 +1,6 @@
 {
   "name": "slack-robot-state",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Enable state management for slack-robot",
   "main": "index.js",
   "scripts": {
