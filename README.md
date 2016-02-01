@@ -21,10 +21,15 @@ var state = require('slack-robot-state');
 var robot = new SlackRobot('slack-token');
 
 // if the file doesn't exist, it will be created for you
-var stateFile = '/path/to/your/state/file.json';
+var statePath = '/path/to/your/state/file.json';
+var pluginState = state(statePath);
+
+// or specify default state
+var defaultState = { attack: 2, defense: 50 };
+var pluginState = state(statePath, defaultState);
 
 // enable plugin
-robot.use(state(stateFile));
+robot.use(statePlugin);
 
 // start using it
 robot.setState({ key: 'value' });

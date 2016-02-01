@@ -5,7 +5,7 @@ var async = require('async');
 var mkdirp = require('mkdirp');
 var deepAssign = require('deep-assign');
 
-module.exports = function robotState(statePath) {
+module.exports = function robotState(statePath, defaultState) {
   if (!statePath) {
     throw new Error('You must specify path to store your state file');
   }
@@ -15,6 +15,7 @@ module.exports = function robotState(statePath) {
   var filename = paths[paths.length - 1];
   var directory = statePath.replace(filename, '');
   var stateWriter = async.queue(writeStateToFile, 1);
+  defaultState = defaultState || {};
 
   try {
     var stat = fs.statSync(statePath);
@@ -25,7 +26,7 @@ module.exports = function robotState(statePath) {
     var stateFile = fs.readFileSync(statePath);
     initialState = JSON.parse(stateFile);
   } catch (e) {
-    initialState = {};
+    initialState = defaultState;
     mkdirp.sync(directory);
   }
 
@@ -36,7 +37,7 @@ module.exports = function robotState(statePath) {
 
   return function plugin(robot) {
     robot.state = initialState;
-    robot.setState = function (newState) {
+    robot.setState = function setState(newState) {
       var nextState = deepAssign(robot.state, newState);
       stateWriter.push(nextState, function (err) {
         if (err) {
