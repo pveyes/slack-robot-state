@@ -37,6 +37,10 @@ robot.setState({ key: 'value' });
 if (robot.state.key === 'value') {
   // do something
 }
+
+// reset state to default
+// if defaultState is not specified on init, it will use an empty object
+robot.resetState();
 ```
 
 ## License

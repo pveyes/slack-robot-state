@@ -45,5 +45,8 @@ module.exports = function robotState(statePath, defaultState) {
         }
       });
     };
+    robot.resetState = function resetState() {
+      robot.setState(defaultState);
+    };
   };
 };
