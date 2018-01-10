@@ -1,5 +1,7 @@
 # slack-robot-state
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/pveyes/slack-robot-state.svg)](https://greenkeeper.io/)
+
 > [slack-robot](https://github.com/traveloka/slack-robot) plugin to enable state management
 
 ## Installing
