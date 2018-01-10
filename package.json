@@ -24,7 +24,7 @@
   },
   "homepage": "https://github.com/pveyes/slack-robot-state#readme",
   "dependencies": {
-    "async": "^1.5.2",
+    "async": "^2.6.0",
     "deep-assign": "^2.0.0",
     "mkdirp": "^0.5.1"
   },
